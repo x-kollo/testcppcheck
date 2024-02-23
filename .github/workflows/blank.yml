@@ -26,4 +26,4 @@ jobs:
         uses: tonybaloney/cppcheck-action@master
         with:
           path: .
-          level: all
+          opts: all--enable=all
