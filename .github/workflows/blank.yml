@@ -24,6 +24,10 @@ jobs:
     steps:
       - name: Git clone project
         uses: actions/checkout@v3
+      - name: Run a multi-line script
+        run: |
+          pwd
+          ls
       - name: cppcheck
         uses: tonybaloney/cppcheck-action@master
         with:
