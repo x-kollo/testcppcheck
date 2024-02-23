@@ -31,5 +31,5 @@ jobs:
       - name: cppcheck
         uses: tonybaloney/cppcheck-action@master
         with:
-          path: .
+          path: /home/runner/work/testcppcheck/testcppcheck/
           opts: all--enable=all
