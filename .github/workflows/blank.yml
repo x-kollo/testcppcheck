@@ -24,3 +24,6 @@ jobs:
     steps:
       - name: cppcheck
         uses: tonybaloney/cppcheck-action@master
+        with:
+          path: .
+          level: all
