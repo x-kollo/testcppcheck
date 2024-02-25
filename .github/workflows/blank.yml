@@ -24,10 +24,13 @@ jobs:
     steps:
       - name: Git clone project
         uses: actions/checkout@v2
+      - name: runaa
+        run: |
+          ls
       - name: cppcheck
         uses: Bedzior/cppcheck-action@master
-        # with:
-        #   enabled checks: all
-        #   enable inconclusive: true
-        #   generate report: true
-        #   report name: cppcheck_report.html
+        with:
+          enabled checks: all
+          enable inconclusive: true
+          generate report: true
+          report name: cppcheck_report.html
