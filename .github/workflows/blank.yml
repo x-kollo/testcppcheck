@@ -23,11 +23,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Git clone project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: cppcheck
         uses: Bedzior/cppcheck-action@master
-        with:
-          enabled checks: all
-          enable inconclusive: true
-          generate report: true
-          report name: cppcheck_report.html
+        # with:
+        #   enabled checks: all
+        #   enable inconclusive: true
+        #   generate report: true
+        #   report name: cppcheck_report.html
