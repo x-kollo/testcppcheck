@@ -29,7 +29,16 @@ jobs:
           pwd
           ls
       - name: cppcheck
-        uses: tonybaloney/cppcheck-action@master
+        uses: Bedzior/cppcheck-action@v1.0
         with:
-          path: /home/runner/work/testcppcheck/testcppcheck/
-          opts: all--enable=all
+          enabled checks: all
+          enable inconclusive: true
+          generate report: true
+        - name: Upload report
+          uses: actions/upload-artifact@v1
+          with:
+            name: report
+            path: output
+            description: 'Whether to generate an XML and HTML reports'
+            required: false
+            default: true
