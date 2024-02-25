@@ -25,7 +25,7 @@ jobs:
       - name: Git clone project
         uses: actions/checkout@v3
       - name: cppcheck
-        uses: Bedzior/cppcheck-action@v1.0
+        uses: Bedzior/cppcheck-action@master
         with:
           enabled checks: all
           enable inconclusive: true
