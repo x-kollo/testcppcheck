@@ -27,6 +27,18 @@ jobs:
       - name: runaa
         run: |
           ls
+      - name: Build test Docker image
+        id: build-docker
+        run: |
+          IMAGE=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]'):test
+          docker build . --file Dockerfile --tag $IMAGE
+          echo "::set-env name=DOCKER_IMAGE::${IMAGE}"
+      - name: Run all input tests
+        run: |
+          for f in input-tests/*.sh ; do
+            docker run -t $DOCKER_IMAGE --entrypoint "/bin/sh" -c input-tests/${f}
+          done
+          docker container prune
       - name: cppcheck
         uses: Bedzior/cppcheck-action@master
         with:
@@ -34,3 +46,15 @@ jobs:
           enable inconclusive: true
           generate report: true
           report name: cppcheck_report.html
+      - name: Testing GitHub Action in action
+        uses: actions/checkout@v1
+      - name: No project or path test
+        uses: ./
+      - name: Test shouldn't succeed
+        if: success()
+        run: exit 1
+      - name: Test should fail
+        if: failure()
+        run: |
+          echo Expected failure
+          exit 0
