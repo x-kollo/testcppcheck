@@ -36,10 +36,7 @@ jobs:
         with:
           html_file: 'cppcheck_report/index.html'
       - name: Get HTML preview link
-        id: prComment
         uses: github-actions-up-and-running/pr-comment@v1.0.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          message: ${{ steps.html_preview.outputs.url }}
-      - name: Print comment URL
-        run: echo "Comment URL - ${{ steps.prComment.outputs.comment-url }}"
+          message: ${{ format('[Click here to preview HTML page in browser]({0})', steps.html_preview.outputs.url) }}
