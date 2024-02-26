@@ -27,6 +27,9 @@ jobs:
           sudo apt install cppcheck
           cppcheck --enable=all --xml --output-file=cppcheck_report.xml .
           cppcheck-htmlreport --file cppcheck_report.xml --report-dir=cppcheck_report
+          ls
+          cd cppcheck_report
+          ls
       - name: HTML Preview
         id: html_preview
         uses: pavi2410/html-preview-action@v2
