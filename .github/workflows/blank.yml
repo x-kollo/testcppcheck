@@ -51,4 +51,4 @@ jobs:
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: |
-            https://x-kollo.github.io/testcppcheck/
+            cppcheck report -- https://x-kollo.github.io/testcppcheck/
