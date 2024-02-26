@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: Git clone project
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: cppcheck
         run: |
           sudo apt install cppcheck
