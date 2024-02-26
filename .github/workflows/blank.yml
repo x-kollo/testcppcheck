@@ -38,7 +38,7 @@ jobs:
       - name: Commit and Push to gh-pages
         run: |
           git checkout -b gh-pages
-          git add /cppcheck_report/.
+          git add cppcheck_report/.
           git commit -m "Publish HTML file from GitHub Actions"
           git push origin gh-pages
       # - name: Get HTML preview link
