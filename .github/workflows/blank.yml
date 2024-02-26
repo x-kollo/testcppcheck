@@ -46,8 +46,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Get HTML preview link
-        uses: github-actions-up-and-running/pr-comment@v1.0.0
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          message: Click here to open cppcheck report - https://x-kollo.github.io/testcppcheck/
+          message: |
+            https://x-kollo.github.io/testcppcheck/
