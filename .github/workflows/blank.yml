@@ -32,4 +32,4 @@ jobs:
       - name: HTML Preview
         uses: pavi2410/html-preview-action@v2
         with:
-          html_file: 'cppcheck_report/index.html'
+          html_file: 'index.html'
