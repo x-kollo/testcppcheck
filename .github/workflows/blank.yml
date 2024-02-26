@@ -26,6 +26,6 @@ jobs:
         uses: actions/checkout@v2
       - name: cppcheck
         run: |
-          apt install cppcheck
+          sudo apt install cppcheck
           cppcheck --enable=all --xml --output-file=cppcheck_report.xml .
           cppcheck-htmlreport --file cppcheck_report.xml --report_dir=cppcheck_report
