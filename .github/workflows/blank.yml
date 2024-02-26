@@ -29,7 +29,7 @@ jobs:
           cppcheck-htmlreport --file cppcheck_report.xml --report-dir=cppcheck_report
       - name: HTML Preview
         id: html_preview
-        uses: pavi2410/html-preview-action@master
+        uses: pavi2410/html-preview-action@v2
         with:
           html_file: 'cppcheck_report/index.html'
       - name: Get HTML preview link
