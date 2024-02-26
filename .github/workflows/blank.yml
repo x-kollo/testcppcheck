@@ -28,11 +28,15 @@ jobs:
           cppcheck --enable=all --xml --output-file=cppcheck_report.xml .
           cppcheck-htmlreport --file cppcheck_report.xml --report-dir=cppcheck_report
       - name: HTML Preview
+        id: html_preview
         uses: pavi2410/html-preview-action@master
         with:
           html_file: 'cppcheck_report/index.html'
       - name: Get HTML preview link
+        id: prComment
         uses: github-actions-up-and-running/pr-comment@v1.0.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           message: ${{ steps.html_preview.outputs.url }}
+      - name: Print comment URL
+        run: echo "Comment URL - ${{ steps.prComment.outputs.comment-url }}"
