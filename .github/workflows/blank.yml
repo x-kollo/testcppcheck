@@ -38,6 +38,12 @@ jobs:
       - name: test
         run: |
           ${{ steps.html_preview.outputs.url }}
+      - name: Commit and Push to gh-pages
+        run: |
+          git checkout -b gh-pages
+          git add /cppcheck_report/.
+          git commit -m "Publish HTML file from GitHub Actions"
+          git push origin gh-pages
       # - name: Get HTML preview link
       #   uses: github-actions-up-and-running/pr-comment@v1.0.0
       #   with:
