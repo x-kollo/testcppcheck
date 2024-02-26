@@ -32,17 +32,15 @@ jobs:
           ls
           cd cppcheck_report
           ls
-      - name: Checkout
-        uses: actions/checkout@v4
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v2
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: 'cppcheck_report/.'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v2
   
       # - name: HTML Preview
       #   id: html_preview
