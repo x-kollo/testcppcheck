@@ -37,7 +37,7 @@ jobs:
       #     html_file: 'cppcheck_report/index.html'
       - name: Configure Git
         run: |
-          git config --global user.name "GitHub Actions"
+          git config --global user.name "x-k0llo"
           git config --global user.email "novak.bogdanius@gmail.com"
       - name: Commit and Push to gh-pages
         run: |
