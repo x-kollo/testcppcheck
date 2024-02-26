@@ -30,6 +30,6 @@ jobs:
           cppcheck --enable=all --xml --output-file=cppcheck_report.xml .
           cppcheck-htmlreport --file cppcheck_report.xml --report-dir=cppcheck_report
       - name: HTML Preview
-        uses: pavi2410/html-preview-action@v2
+        uses: pavi2410/html-preview-action@master
         with:
-          html_file: 'index.html'
+          html_file: 'cppcheck_report/index.html'
