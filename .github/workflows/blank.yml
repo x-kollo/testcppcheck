@@ -38,17 +38,7 @@ jobs:
           ls
           cd cppcheck_report
           ls
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'cppcheck_report/.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-      - name: Comment PR
-        uses: thollander/actions-comment-pull-request@v2
-        with:
-          message: |
-            cppcheck report -- https://x-kollo.github.io/testcppcheck/
