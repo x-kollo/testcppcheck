@@ -41,5 +41,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'cppcheck_report/.'
+          path: 'cppcheck_report'
           name: cppcheck-report
